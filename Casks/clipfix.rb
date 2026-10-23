@@ -1,13 +1,11 @@
-# Homebrew-Formel (Cask) für ClipFix, für ein eigenes Tap von Flixtake (Flixtake-IT-Germany/homebrew-tap).
+# Homebrew-Formel (Cask) für ClipFix im Tap von Flixtake (Flixtake-IT-Germany/homebrew-tap).
 # Installation: brew install --cask flixtake-it-germany/tap/clipfix
 # Version und sha256 setzt das Skript für Veröffentlichungen, die Dateien liegen auf clipfix.flixtake.app.
-#
-# Über Homebrew sind Suche und Installieren von Updates in ClipFix ab Werk aus, Homebrew aktualisiert mit
-# brew upgrade. Damit ClipFix das erkennt, setzt postflight InstallSource=homebrew in den Einstellungen der App.
-# Wählt jemand in ClipFix selbst, gilt diese Wahl.
+# Über Homebrew aktualisiert brew upgrade; ClipFix erkennt das an seinem Ordner im Caskroom und sucht dann
+# nicht selbst nach Updates.
 cask "clipfix" do
-  version "0.1.1"
-  sha256 "04da9f587a9eb97582f3a2e1c85cc7fcb86879e39a74300b13d6fe61121bedd6"
+  version "0.1.2"
+  sha256 "88088d8d6a88c39a504c9d0b1e3f352c170878d73ac8f90e94e0b036c359ff24"
 
   url "https://clipfix.flixtake.app/download/ClipFix-#{version}-arm64.dmg"
   name "ClipFix"
@@ -23,17 +21,6 @@ cask "clipfix" do
   depends_on macos: :monterey
 
   app "ClipFix.app"
-
-  postflight do
-    system_command "/usr/bin/defaults",
-                   args: ["write", "com.flixtake.clipfix", "InstallSource", "-string", "homebrew"]
-  end
-
-  uninstall_postflight do
-    system_command "/usr/bin/defaults",
-                   args: ["delete", "com.flixtake.clipfix", "InstallSource"],
-                   must_succeed: false
-  end
 
   zap trash: [
     "~/Library/Application Support/ClipFix",
