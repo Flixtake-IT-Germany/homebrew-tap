@@ -6,8 +6,8 @@
 # brew upgrade. Damit ClipFix das erkennt, setzt postflight InstallSource=homebrew in den Einstellungen der App.
 # Wählt jemand in ClipFix selbst, gilt diese Wahl.
 cask "clipfix" do
-  version "0.1.0"
-  sha256 "95b78e9255aafcebee95b0d9a66051d5c165708ec8fd757f30ec8a601c3373f8"
+  version "0.1.1"
+  sha256 "04da9f587a9eb97582f3a2e1c85cc7fcb86879e39a74300b13d6fe61121bedd6"
 
   url "https://clipfix.flixtake.app/download/ClipFix-#{version}-arm64.dmg"
   name "ClipFix"
