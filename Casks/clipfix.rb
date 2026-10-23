@@ -4,8 +4,8 @@
 # Über Homebrew aktualisiert brew upgrade; ClipFix erkennt das an seinem Ordner im Caskroom und sucht dann
 # nicht selbst nach Updates.
 cask "clipfix" do
-  version "0.1.4"
-  sha256 "fc3661ae6788a8b8e9e6864b7369c6dc0beb615c8cb5205179d2ce1d44c0b663"
+  version "0.1.5"
+  sha256 "6131aa1602ffc56b14fb40282635dc86d71ebe36852b43351fb41c368e695b6d"
 
   url "https://clipfix.flixtake.app/download/ClipFix-#{version}-arm64.dmg"
   name "ClipFix"
